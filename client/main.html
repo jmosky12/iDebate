@@ -1,0 +1,34 @@
+<head>
+  <title>A3: Starting with APIs </title>
+</head>
+
+<body>
+  {{> main}}
+</body>
+
+<template name="main">
+  <h1>A3: Starting with APIs </h1>
+
+  <p>
+    <a href="https://docs.google.com/document/d/1zmvlGO5PD1oi0q1kFFE6l0wZOqwDeVw71w-t0LrFmIw/edit#"
+      target="_blank"> assignment document </a>
+  </p>
+
+  {{> loginButtons}} <br/>
+
+  {{#if currentUser}}
+  <p>User:
+    <a href="{{ ulink }}" target="_blank"> {{ sName }} </a></p>
+
+  {{else}}
+  <p> Not logged in. </p>
+  {{/if}}
+
+  <button id="submit">
+    example button
+  </button>
+</template>
+
+<template name="viz">
+  <!--todo-->
+</template>

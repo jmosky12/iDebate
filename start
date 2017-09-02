@@ -1,0 +1,2 @@
+export ROOT_URL="https://twitter-graph-jwrnr.c9users.io"
+meteor --port $IP:$PORT
