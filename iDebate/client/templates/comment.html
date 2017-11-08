@@ -3,13 +3,18 @@
       <title>iDebate</title>
     </head>
     
-    <body>  
-      <h1>{{ channel }}</h1>
+    <body>
+      <p>{{ category }}</p>  
+      <h1 style="margin-top: 10px;">{{ channel }}</h1>
       <p>Time Remaining</p>
-      <h1>{{ timer }}</h1>
+      <h1>{{ comment_timer }}</h1>
       {{> messages }}
-      {{> input }}
-
+      {{#if submitted }}
+        <h1>Message submitted!</h1>
+      {{else}}
+        {{> input }}
+      {{/if}}
+      <a href="https://cs160-project-idebate-qalu.c9users.io/topics">Back to Topics.</a>
     </body>
 
 
@@ -21,7 +26,8 @@
 
 <template name="messages">
   {{#each messages}}
-    <strong>{{owner}} :</strong> {{message}}<br>
+    <div class="message-box"><strong>{{owner}} :<br></strong> {{message}}<br><br></div>
+    
   {{/each}}
 </template>
 

@@ -1,2 +1,2 @@
-export ROOT_URL="https://twitter-graph-kyriakipapadimitriou.c9users.io"
+export ROOT_URL="https://cs160-project-idebate-qalu.c9users.io"
 meteor --port $IP:$PORT

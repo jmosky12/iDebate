@@ -1,5 +1,5 @@
 Template.topics.onRendered(function() {
-    function startTimer(duration, display) {
+    function startTimer(duration) {
         var timer = duration, minutes, seconds;
         setInterval(function () {
             minutes = parseInt(timer / 60, 10)
@@ -8,7 +8,7 @@ Template.topics.onRendered(function() {
             minutes = minutes < 10 ? "0" + minutes : minutes;
             seconds = seconds < 10 ? "0" + seconds : seconds;
     
-            display.textContent = minutes + ":" + seconds;
+            Session.set('topic_timer', minutes + ":" + seconds);
     
             if (--timer < 0) {
                 timer = duration;
@@ -16,9 +16,12 @@ Template.topics.onRendered(function() {
         }, 1000);
     }
 
-    window.onload = function() {
-        var tenMinutes = 60 * 10,
-            display = document.querySelector('#time');
-        startTimer(tenMinutes, display);
-    };
+
+    startTimer(60*10);
+});
+
+Template.topics.helpers({
+    topic_timer: function() {
+        return Session.get('topic_timer');
+    }
 });
