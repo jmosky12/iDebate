@@ -1,0 +1,33 @@
+<template name='comment'>
+    <head>
+      <title>iDebate</title>
+    </head>
+    
+    <body>  
+      <h1>{{ channel }}</h1>
+      <p>Time Remaining</p>
+      <h1>{{ timer }}</h1>
+      {{> messages }}
+      {{> input }}
+
+    </body>
+
+
+</template>
+
+<template name="input">
+  <p>Message: <input type="text" id="message"></p>
+</template>
+
+<template name="messages">
+  {{#each messages}}
+    <strong>{{owner}} :</strong> {{message}}<br>
+  {{/each}}
+</template>
+
+<template name="welcome">
+  <p>
+    Let's chat.
+  </p>
+</template>
+    
